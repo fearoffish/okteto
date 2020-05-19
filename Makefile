@@ -1,9 +1,9 @@
 ifeq ($(strip $(VERSION_STRING)),)
-VERSION_STRING := $(shell git rev-parse --short HEAD)
+	VERSION_STRING := $(shell git rev-parse --short HEAD)
 endif
 
 BINDIR    := $(CURDIR)/bin
-PLATFORMS := linux/amd64/okteto-Linux-x86_64 darwin/amd64/okteto-Darwin-x86_64 windows/amd64/okteto.exe linux/arm64/okteto-Linux-arm64
+PLATFORMS := linux/amd64/okteto-linux-x86_64 darwin/amd64/okteto-darwin-x86_64 windows/amd64/okteto.exe linux/arm64/okteto-linux-arm64 linux/arm/okteto-linux-arm
 BUILDCOMMAND := go build -ldflags "-s -w -X github.com/okteto/okteto/pkg/config.VersionString=${VERSION_STRING}" -tags "osusergo netgo static_build"
 temp = $(subst /, ,$@)
 os = $(word 1, $(temp))
@@ -12,9 +12,9 @@ label = $(word 3, $(temp))
 
 UNAME := $(shell uname)
 ifeq ($(UNAME), Darwin)
-SHACOMMAND := shasum -a 256
+	SHACOMMAND := shasum -a 256
 else 
-SHACOMMAND := sha256sum
+	SHACOMMAND := sha256sum
 endif
 
 .DEFAULT_GOAL := build

@@ -15,7 +15,7 @@ cmd_exists() {
 	command -v "$@" > /dev/null 2>&1
 }
 
-latestURL=https://github.com/okteto/okteto/releases/latest/download
+latestURL=https://github.com/fearoffish/okteto/releases/latest/download
 
 case "$OS" in
     darwin) 
@@ -28,6 +28,9 @@ case "$OS" in
             ;;
         amd64) 
             URL=${latestURL}/okteto-Linux-x86_64
+            ;;
+        arm) 
+            URL=${latestURL}/okteto-Linux-arm
             ;;
         armv8*) 
             URL=${latestURL}/okteto-Linux-arm64

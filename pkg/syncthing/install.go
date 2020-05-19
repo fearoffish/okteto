@@ -33,6 +33,7 @@ var (
 	downloadURLs = map[string]string{
 		"linux":   "https://github.com/syncthing/syncthing/releases/download/v1.5.0/syncthing-linux-amd64-v1.5.0.tar.gz",
 		"arm64":   "https://github.com/syncthing/syncthing/releases/download/v1.5.0/syncthing-linux-arm64-v1.5.0.tar.gz",
+		"arm":     "https://github.com/syncthing/syncthing/releases/download/v1.5.0/syncthing-linux-arm-v1.5.0.tar.gz",
 		"darwin":  "https://github.com/syncthing/syncthing/releases/download/v1.5.0/syncthing-macos-amd64-v1.5.0.tar.gz",
 		"windows": "https://github.com/syncthing/syncthing/releases/download/v1.5.0/syncthing-windows-amd64-v1.5.0.zip",
 	}
